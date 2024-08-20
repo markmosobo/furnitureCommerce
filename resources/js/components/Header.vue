@@ -126,7 +126,13 @@
                  <div class="col-lg-2 col-xxl-2 text-end col-md-6 col-7">
                     <div class="list-inline">
                        <div class="list-inline-item me-5">
-                          <a href="pages/shop-wishlist.html" class="text-muted position-relative">
+                           <router-link to="/accountwishlist" custom v-slot="{ href, navigate, isActive }">
+                           <a
+                             :href="href"
+                             :class="{ active: isActive }"
+                             class="text-muted position-relative"
+                             @click="navigate"
+                           >
                              <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 width="20"
@@ -145,6 +151,7 @@
                                 <span class="visually-hidden">unread messages</span>
                              </span>
                           </a>
+                          </router-link>
                        </div>
                        <div class="list-inline-item me-5">
                           <a href="#!" class="text-muted" data-bs-toggle="modal" data-bs-target="#userModal">
@@ -279,12 +286,6 @@
                           <div class="card card-body">
                              <ul class="mb-0 list-unstyled">
                                 <li><a class="dropdown-item" href="pages/shop-grid.html">Dairy, Bread & Eggs</a></li>
-                                <li><a class="dropdown-item" href="pages/shop-grid.html">Snacks & Munchies</a></li>
-                                <li><a class="dropdown-item" href="pages/shop-grid.html">Fruits & Vegetables</a></li>
-                                <li><a class="dropdown-item" href="pages/shop-grid.html">Cold Drinks & Juices</a></li>
-                                <li><a class="dropdown-item" href="pages/shop-grid.html">Breakfast & Instant Food</a></li>
-                                <li><a class="dropdown-item" href="pages/shop-grid.html">Bakery & Biscuits</a></li>
-                                <li><a class="dropdown-item" href="pages/shop-grid.html">Chicken, Meat & Fish</a></li>
                              </ul>
                           </div>
                        </div>
@@ -318,13 +319,40 @@
                     <div>
                        <ul class="navbar-nav align-items-center">
                           <li class="nav-item dropdown w-100 w-lg-auto">
-                             <a class="nav-link" href="#" role="button">Home</a>
+                             <router-link to="/" custom v-slot="{ href, navigate, isActive }">
+                                 <a
+                                   :href="href"
+                                   :class="{ active: isActive }"
+                                   class="nav-link"
+                                   role="button"
+                                   @click="navigate"
+                                 >Home
+                                 </a>
+                              </router-link>
                           </li>
                           <li class="nav-item dropdown w-100 w-lg-auto">
-                             <a class="nav-link" href="#" role="button">Shop</a>
+                             <router-link to="/shops" custom v-slot="{ href, navigate, isActive }">
+                                 <a
+                                   :href="href"
+                                   :class="{ active: isActive }"
+                                   class="nav-link"
+                                   role="button"
+                                   @click="navigate"
+                                 >Shop
+                                 </a>
+                              </router-link>
                           </li>
                           <li class="nav-item dropdown w-100 w-lg-auto">
-                             <a class="nav-link" href="#" role="button">Stores</a>
+                           <router-link to="/stores" custom v-slot="{ href, navigate, isActive }">
+                                 <a
+                                   :href="href"
+                                   :class="{ active: isActive }"
+                                   class="nav-link"
+                                   role="button"
+                                   @click="navigate"
+                                 >Stores
+                                 </a>
+                              </router-link>
                           </li>
                           <li class="nav-item dropdown w-100 w-lg-auto dropdown-fullwidth">
                              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Mega menu</a>
@@ -333,35 +361,17 @@
                                    <div class="col-lg-3 col-12 mb-4 mb-lg-0">
                                       <h6 class="text-primary ps-3">Dairy, Bread & Eggs</h6>
                                       <a class="dropdown-item" href="pages/shop-grid.html">Butter</a>
-                                      <a class="dropdown-item" href="pages/shop-grid.html">Milk Drinks</a>
-                                      <a class="dropdown-item" href="pages/shop-grid.html">Curd & Yogurt</a>
-                                      <a class="dropdown-item" href="pages/shop-grid.html">Eggs</a>
-                                      <a class="dropdown-item" href="pages/shop-grid.html">Buns & Bakery</a>
-                                      <a class="dropdown-item" href="pages/shop-grid.html">Cheese</a>
-                                      <a class="dropdown-item" href="pages/shop-grid.html">Condensed Milk</a>
-                                      <a class="dropdown-item" href="pages/shop-grid.html">Dairy Products</a>
+
                                    </div>
                                    <div class="col-lg-3 col-12 mb-4 mb-lg-0">
                                       <h6 class="text-primary ps-3">Breakfast & Instant Food</h6>
                                       <a class="dropdown-item" href="pages/shop-grid.html">Breakfast Cereal</a>
-                                      <a class="dropdown-item" href="pages/shop-grid.html">Noodles, Pasta & Soup</a>
-                                      <a class="dropdown-item" href="pages/shop-grid.html">Frozen Veg Snacks</a>
-                                      <a class="dropdown-item" href="pages/shop-grid.html">Frozen Non-Veg Snacks</a>
-                                      <a class="dropdown-item" href="pages/shop-grid.html">Vermicelli</a>
-                                      <a class="dropdown-item" href="pages/shop-grid.html">Instant Mixes</a>
-                                      <a class="dropdown-item" href="pages/shop-grid.html">Batter</a>
-                                      <a class="dropdown-item" href="pages/shop-grid.html">Fruit and Juices</a>
+
                                    </div>
                                    <div class="col-lg-3 col-12 mb-4 mb-lg-0">
                                       <h6 class="text-primary ps-3">Cold Drinks & Juices</h6>
                                       <a class="dropdown-item" href="pages/shop-grid.html">Soft Drinks</a>
-                                      <a class="dropdown-item" href="pages/shop-grid.html">Fruit Juices</a>
-                                      <a class="dropdown-item" href="pages/shop-grid.html">Coldpress</a>
-                                      <a class="dropdown-item" href="pages/shop-grid.html">Water & Ice Cubes</a>
-                                      <a class="dropdown-item" href="pages/shop-grid.html">Soda & Mixers</a>
-                                      <a class="dropdown-item" href="pages/shop-grid.html">Health Drinks</a>
-                                      <a class="dropdown-item" href="pages/shop-grid.html">Herbal Drinks</a>
-                                      <a class="dropdown-item" href="pages/shop-grid.html">Milk Drinks</a>
+
                                    </div>
                                    <div class="col-lg-3 col-12 mb-4 mb-lg-0">
                                       <div class="card border-0">
@@ -382,32 +392,102 @@
                           <li class="nav-item dropdown w-100 w-lg-auto">
                              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Account</a>
                              <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" @click="signIn" href="#">Sign in</a></li>
-                                <li><a class="dropdown-item" @click="signUp" href="#">Signup</a></li>
+                                <li>
+                                 <router-link to="/login" custom v-slot="{ href, navigate, isActive }">
+                                    <a
+                                      :href="href"
+                                      :class="{ active: isActive }"
+                                      class="dropdown-item"
+                                      @click="navigate"
+                                    >Sign in
+                                    </a>
+                                 </router-link>
+                                 </li>
+                                <li>
+                                    <router-link to="/register" custom v-slot="{ href, navigate, isActive }">
+                                       <a
+                                         :href="href"
+                                         :class="{ active: isActive }"
+                                         class="dropdown-item"
+                                         @click="navigate"
+                                       >Sign up
+                                       </a>
+                                    </router-link>
+                                 </li>
                                 <li><a class="dropdown-item" @click="forgotPassword" href="#">Forgot Password</a></li>
                                 <li class="dropdown-submenu dropend">
                                    <a class="dropdown-item dropdown-list-group-item dropdown-toggle" href="#">My Account</a>
                                    <ul class="dropdown-menu">
-                                      <li><a class="dropdown-item" @click="accountOrders" href="#">Orders</a></li>
-                                      <li><a class="dropdown-item" @click="accountSettings" href="#">Settings</a></li>
-                                      <li><a class="dropdown-item" @click="accountAddress" href="#">Address</a></li>
-                                      <li><a class="dropdown-item" @click="accountPayment" href="#">Payment Method</a></li>
-                                      <li><a class="dropdown-item" @click="accountNotification" href="#">Notification</a></li>
+                                      <li>
+                                       <router-link to="/accountorders" custom v-slot="{ href, navigate, isActive }">
+                                          <a
+                                            :href="href"
+                                            :class="{ active: isActive }"
+                                            class="dropdown-item"
+                                            @click="navigate"
+                                          >Orders
+                                          </a>
+                                       </router-link>                                       
+                                      </li>
+                                      <li>
+                                       <router-link to="/accountsettings" custom v-slot="{ href, navigate, isActive }">
+                                          <a
+                                            :href="href"
+                                            :class="{ active: isActive }"
+                                            class="dropdown-item"
+                                            @click="navigate"
+                                          >Settings
+                                          </a>
+                                       </router-link>
+                                      </li>
+                                      <li>
+                                       <router-link to="/accountaddress" custom v-slot="{ href, navigate, isActive }">
+                                          <a
+                                            :href="href"
+                                            :class="{ active: isActive }"
+                                            class="dropdown-item"
+                                            @click="navigate"
+                                          >Address
+                                          </a>
+                                       </router-link>
+                                      </li>
+                                      <li>
+                                       <router-link to="/accountpayment" custom v-slot="{ href, navigate, isActive }">
+                                          <a
+                                            :href="href"
+                                            :class="{ active: isActive }"
+                                            class="dropdown-item"
+                                            @click="navigate"
+                                          >Payment Method
+                                          </a>
+                                       </router-link>
+                                      </li>
+                                      <li>
+                                       <router-link to="/accountnotification" custom v-slot="{ href, navigate, isActive }">
+                                          <a
+                                            :href="href"
+                                            :class="{ active: isActive }"
+                                            class="dropdown-item"
+                                            @click="navigate"
+                                          >Notification
+                                          </a>
+                                       </router-link>
+                                      </li>
                                    </ul>
                                 </li>
                              </ul>
                           </li>
                           <li class="nav-item w-100 w-lg-auto">
                              <router-link to="/home" custom v-slot="{ href, navigate, isActive }">
-			                  <a
-			                    :href="href"
-			                    :class="{ active: isActive }"
-			                    class="nav-link"
-			                    aria-current="page"
-			                    @click="navigate"
-			                  >
-                             Dashboard</a>
-                         	</router-link>
+   			                  <a
+   			                    :href="href"
+   			                    :class="{ active: isActive }"
+   			                    class="nav-link"
+   			                    aria-current="page"
+   			                    @click="navigate"
+   			                  >
+                                Dashboard</a>
+                            	</router-link>
                           </li>
                        </ul>
                     </div>

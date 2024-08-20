@@ -23,6 +23,7 @@ import AccountSettings from '../views/account/Settings.vue'
 import AccountAddress from '../views/account/Address.vue'
 import AccountPayment from '../views/account/Payment.vue'
 import AccountNotification from '../views/account/Notification.vue'
+import AccountWishlist from '../views/account/Wishlist.vue'
 
 const routes = [
     {
@@ -144,6 +145,11 @@ const routes = [
         path:'/accountnotification',
         name: 'accountnotification',
         component: AccountNotification
+    },
+    {
+        path:'/accountwishlist',
+        name: 'accountwishlist',
+        component: AccountWishlist
     },
 ];
 
